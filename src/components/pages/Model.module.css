@@ -1,0 +1,11 @@
+.wrapper{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapperError{
+    margin: 0 auto;
+}
