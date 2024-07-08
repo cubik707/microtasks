@@ -6,16 +6,17 @@ import styles from './Model.module.css'
 export const Model = () => {
     const {id} = useParams()
     console.log(id)
-    const adidas = adidasArr.find(el => el.id === Number(id))
-    console.log(adidas?.model)
+    //todo: необходимо убрать хардкод массива
+    const currentModel = adidasArr.find(el => el.id === Number(id))
+    console.log(currentModel?.model)
     return (
         <>
             {
-                adidas ? <div className={styles.wrapper}>
-                        <h3>{adidas?.model}</h3>
-                        <span>{adidas?.collection}</span>
-                        <span>{adidas?.price}</span>
-                        <img src={adidas?.picture} alt={'picture'}/>
+                currentModel ? <div className={styles.wrapper}>
+                        <h3>{currentModel.model}</h3>
+                        <span>{currentModel.collection}</span>
+                        <span>{currentModel.price}</span>
+                        <img src={currentModel.picture} alt={'picture'}/>
                     </div>
                     : <div className={styles.wrapperError}>Модель отсутствует</div>
             }
