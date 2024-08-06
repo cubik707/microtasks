@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from "./components/Site.module.css";
 import {NavLink, Outlet} from 'react-router-dom';
+import {PATH} from "./routes/router";
 
 
 
@@ -12,12 +13,6 @@ export type SneackersItem = {
     picture: string;
 }
 
-export const PATH = {
-    ADIDAS: '/adidas',
-    PUMA: '/puma',
-    ABIBAS: '/abibas',
-    PRICES: '/prices'
-}
 
 
 function App() {
