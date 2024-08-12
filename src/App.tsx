@@ -38,9 +38,13 @@ function App() {
                         to={PATH.PRICES}
                         className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}
                     >Цена для оптовиков</NavLink></div>
+                    <div><NavLink
+                        to={'/protectedPage'}
+                        className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}
+                    >ProtectedPage</NavLink></div>
                 </div>
                 <div className={styles.content}>
-                    <Outlet />
+                    <Outlet/>
                     {/*<Routes>*/}
                     {/*    <Route path={PATH.PAGE1} element={<Adidas/>}/>*/}
                     {/*    <Route path={PATH.PAGE2} element={<Puma/>}/>*/}
