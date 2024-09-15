@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./components/Site.module.css";
-import {NavLink, Outlet} from 'react-router-dom';
+import {Link, NavLink, Outlet, useNavigate} from 'react-router-dom';
 import {PATH} from "./routes/router";
 
 
@@ -16,6 +16,11 @@ export type SneackersItem = {
 
 
 function App() {
+    const navigate = useNavigate()
+    const navigateHandler = ()=>{
+        navigate(-1)
+    }
+
     return (
         <div>
             <div className={styles.header}><h1>HEADER</h1></div>
@@ -44,18 +49,11 @@ function App() {
                     >ProtectedPage</NavLink></div>
                 </div>
                 <div className={styles.content}>
+                    <div className={styles.HorizontalNavigation}>
+                        <Link className={styles.LinkLikeButton} to={"/"}>ГЛАВНАЯ СТРАНИЦА (ADIDAS)</Link>
+                        <button onClick={navigateHandler} className={styles.ButtonLikeLink} >НАЗАД</button>
+                    </div>
                     <Outlet/>
-                    {/*<Routes>*/}
-                    {/*    <Route path={PATH.PAGE1} element={<Adidas/>}/>*/}
-                    {/*    <Route path={PATH.PAGE2} element={<Puma/>}/>*/}
-                    {/*    <Route path={PATH.PAGE3} element={<Abibas/>}/>*/}
-                    {/*    <Route path={PATH.PRICES} element={<Prices/>}/>*/}
-                    {/*    <Route path={"/:model/:id"} element={<Model/>}/>*/}
-                    {/*    <Route path={"/"} element={<Navigate to={PATH.PAGE1}/>}/>*/}
-                    {/*    <Route path={"/page/error"} element={<Error404/>}/>*/}
-                    {/*    <Route path={"/*"} element={<Navigate to={"/page/error"}/>}/>*/}
-                    {/*</Routes>*/}
-
                 </div>
             </div>
             <div className={styles.footer}>abibas 2023</div>

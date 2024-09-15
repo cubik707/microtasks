@@ -54,7 +54,7 @@ const publicRoutes:RouteObject[]=[
 
 const privateRoutes:RouteObject[]=[
     {
-        path: '/protected',
+        path: '/protectedPage',
         element: <ProtectedPage/>
     },
 ]
